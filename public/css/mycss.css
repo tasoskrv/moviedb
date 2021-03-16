@@ -1,0 +1,673 @@
+body{   
+    background-color: #000;   
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.wrapper {
+  background: #ececec;
+  color: #555;
+  font-size: 20px;
+  margin: 100px 75px 10px 75px;
+  padding: 15px 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+}
+
+.wrapper .tooltip {
+    background: #1496bb;
+    bottom: 0%;
+    color: #fff;
+    display: block;
+    left: 100px;
+    opacity: 0;
+    padding: 20px;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+
+  
+.wrapper:hover .tooltip {
+  opacity: 1;
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+  display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+  display: block;
+}
+
+/*** Input field styling from Bootstrap **/
+ input, textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input:focus, textarea:focus {
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  
+}
+input[type=file]:focus, input[type=checkbox]:focus, select:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 1px dotted #666;
+}
+
+input[type="text"],input[type="password"],textarea{
+  display: inline-block;
+  padding: 3px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 12pt;
+}
+
+select{
+    height: 25px;
+    font-size: 11pt;
+    width: 186px;
+}
+
+.logincls{
+    width: 202px;
+    height: 31px;
+    cursor: pointer;
+}
+
+#main{
+    margin: auto;
+    margin-top: 40px;
+    width: 1024px;
+    /*height: 780px;*/
+    position:relative; 
+    background-color: #fff;
+}
+
+#header{
+    margin: 0;
+    padding: 0;
+    top:0;
+    padding-bottom:50px;
+    height: 50px;
+    background-color: transparent;
+    position: fixed;
+}
+
+#logo{
+    width: 200px;
+    background-color: transparent;
+}
+
+#bar{
+background-color: darkorange;
+width: 1024px;
+height: 50px;
+}
+
+#bar .title{
+    padding-top: 11px;
+}
+
+#bar .title a{
+    color: #fff;
+    padding-left: 30px;
+    font-size: 15pt;
+}
+
+.searchform{
+    margin-left: 289px;
+    margin-top: -23px;
+    position: absolute;
+}
+
+.search{
+    width:500px;
+    height: 30px;
+}
+
+#start_menu{
+    width: 200px;
+    height: 50px;
+    float: right;
+    text-align: right;
+    padding-right: 10px; 
+    margin-top: -19px;
+}
+
+#start_menu .hasborder,.noborder{
+    height: 50px;
+    font-size: 13pt;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#start_menu .hasborder{
+    border-right: solid 1px #fff;
+}
+
+#start_menu ul{
+    list-style: none;
+    height: 50px;
+}
+
+#start_menu ul li{
+    //float: right;
+    height: 50px;
+}
+
+.menu_div{
+    background-color: #fff;
+    border-radius: 6px;
+    position: fixed;
+    margin-top: -12px;
+    margin-left: -48px;
+}
+
+.menu{
+    padding-left: 0px;
+    position: fixed;
+    margin-top: 12px;
+    list-style-type: none;
+}
+
+.menu li{
+    border-radius: 4px;
+    height: 35px;
+    width : 45px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.menu .moviecls{
+    background : url(../images/movie.png) 3px 5px no-repeat;
+}
+
+.menu .actorcls{
+    background : url(../images/actor.png) 3px 5px no-repeat;
+}
+
+.menu .categorycls{
+    background : url(../images/category.png) 3px 5px no-repeat;
+}
+
+.menu .searchcls{
+    background : url(../images/search.png) 3px 5px no-repeat;    
+}
+
+.menu li:hover{
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
+
+.menu li a{
+    display: block; 
+    width: 100%; 
+    height: 100%;    
+}
+
+/******general content********/
+.submit{
+    margin-left: 12px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #0064cd;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+    background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+    background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+    background-image: linear-gradient(top, #049cdb, #0064cd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
+}
+
+.handimage{
+    cursor: pointer;
+}
+
+/*general fieldset*/
+.formset{
+    margin-top: 45px;
+    margin-left: 0px;
+    margin: 5px;
+}
+
+.formset legend{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.formset ul{
+    margin-left:-39px;
+}
+
+.formset ul li{
+    list-style-type: none;
+    margin-left:0px;
+    padding-left:20px;
+    display: inline-block;
+}
+
+/******product form specifics*******/
+
+
+/*******new offer***********/
+.offer_table {
+    width:100%;
+    background-color: #dddddd;
+    border-radius: 3px;
+}
+
+
+.offer_table tbody {
+    background-color: #fff;
+    height: 400px;
+    overflow: auto;
+}
+.offer_table td {
+    padding: 3px 10px;
+}
+
+.offer_table thead tr, .offer_table tbody{
+    display:block;
+}
+.offer_table tr td select{
+    width:60px;
+}
+
+/***title widths********/
+.offer_table tr td .offer_product_title{
+    width:270px;
+}
+
+.offer_table thead tr .title_product{
+    width:290px;
+}
+.offer_table thead tr .title_unit{
+    width:61px;
+}
+
+.offer_table thead tr .title_quantity{
+    width:76px;
+}
+.offer_table thead tr .title_price{
+    width:94px;
+}
+.offer_table thead tr .title_total{
+    width:60px;
+}
+.offer_table thead tr .title_details{
+    width:40px;
+}
+
+/***data widths*****/
+.offer_table tbody tr .data_total{
+    width:60px;
+}
+.offer_table tbody tr .data_details{
+    width:40px;
+}
+
+.align_number{
+    text-align: right;
+}
+
+
+/***div with products***/
+.product_list{
+    width: 400px;
+    height: 211px;
+    background-color: #e6e6e6;
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+    background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    top: inherit;
+    left: 850px;
+    position: fixed;
+    display: none;
+    border-radius: 2px;
+    border: 1px solid #0064cd;
+}
+
+.searchlist{
+    height: 48px;
+    border-bottom: 1px solid #0064cd;
+    background: rgb(69,72,77);
+    background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,1)), color-stop(100%,rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+}
+
+.copy_search{
+padding: 15px 0px 0px 15px;    
+}
+
+.searchlist .copy_search select{
+    width:200px;
+}
+
+.searchlist_button{
+    margin-left: 225px;
+    margin-top: -23px;
+    position: fixed;
+    cursor: pointer;
+}
+
+.close_list{
+    margin-left: 290px;
+    margin-top: -21px;
+    position: fixed;
+    cursor: pointer;
+    color: #fff;
+}
+
+.searchproducts{
+    overflow-y: auto;
+    height: 123px;
+    margin-left: 17px;
+}
+
+.searchproducts span{
+    color: #0088cc;
+    cursor: pointer;
+}
+
+.searchproducts span:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+.load_div{
+    width: 400px;
+    margin: auto;
+}
+
+.loadmore{   
+    background: #0064cd;
+    color: #fff;
+    border-radius: 6px;
+    padding: 20px 100px 20px 100px;
+    cursor: pointer;    
+}
+
+
+.loadmore span{
+    margin-left: 17px;
+    cursor: pointer;
+    color: #333333;
+    margin-top: 6px;
+    position: fixed;
+    color: #fff;
+}
+
+.imdb_link{
+    text-decoration: none;
+    color: #0064cd;
+}
+
+
+/******tabs************/
+ul.tabs{
+        margin: 0px;
+        padding: 0px 0px 10px 0px;
+        list-style: none;
+}
+ul.tabs li{
+        background: none;
+        color: #0064cd;
+        display: inline-block;
+        padding: 10px 15px;
+        cursor: pointer;
+}
+ul.tabs li.current{
+     color:#fff;
+    background-color: #0064cd;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+    background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+    background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+    background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+    background-image: linear-gradient(top, #049cdb, #0064cd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
+    border-radius: 5px;
+}
+.tab-content{
+        display: none;
+        padding: 15px;
+        background-color: #fff;
+       
+}
+.tab-content.current{
+        display: inherit;
+}
+
+
+/*******search********/
+.content_tab{
+    /*height: 500px;*/
+    overflow-y: auto;
+}
+
+.search_table{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.search_table .col1{
+    width: 215px;        
+}
+
+.search_table .col2 .button_area{ 
+    float: right;
+}
+
+.search_table .col2 .button_area input[type=button]{    
+    height: 30px;
+    width: 110px;
+    cursor: pointer;
+}
+
+
+.search_table td{
+    vertical-align: top;
+}
+
+.search_table .movie_details{
+    font-size:17pt;
+}
+.search_table .movie_details .movie_year,.search_table .movie_category{
+    color:#0064cd;
+}
+
+.search_plot{
+    height: 200px;
+    overflow-y: auto;
+    font-size: 13pt;
+    text-align: justify;
+}
+
+.has_seen{
+    background-color: #A3FFA3;
+}
+
+
+.search_options{
+    cursor: pointer;
+    float: right;
+    padding-left: 4px;
+}
+
+.single_row{
+    background-color: #ebebeb;
+}
+
+.double_row{
+    background-color: #fff;
+}
+
+
+
+/**error fields, buttons*****/
+.error_input{
+    border:1px solid #bb0000!important;
+}
+
+.error_text{
+    color:#bb0000;
+}
+
+.disable_button{
+    background-color: #e6e6e6!important;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6), color-stop(0%, #e6e6e6));
+    color:#000;
+}
+
+.loading{
+    display: none;
+}
+
+.messages{
+    margin-top: 5px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 2px;
+    display: none;
+}
+
+.empty_msg,.error_msg{
+    background-color: #FF1919;
+}
+
+.success_msg{
+    background-color: green;
+}
+
+/*************actors****************/
+
+#actor_movies{
+    border:1px solid #000;
+    border-radius: 2px;
+    width: 392px;
+    margin-left: 26px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    height: 160px;
+    overflow-y: auto;
+}
+
+.actor_movie{
+    background-color: #0099FF;
+    color: #fff;
+    border-radius: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.remove_actor_movie{
+    background-color: #bb0000;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+/******advanced search*********/
+.advsearch_cls{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.advsearchform_cls{
+    width: 600px;
+    margin: auto;
+}
+
+.advsearchtable_cls{
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.advfields_cls{
+    width: 100%;
+    height: 30px;
+}
+
+.advsubmit_cls{
+    float: right;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;    
+}
+
+.advinlinetable_cls{
+    font-size: 20px;
+}
+/***********footer**************/
+
+#footer{
+    background-color: darkorange;
+    margin: auto;
+    color: #fff;
+    width: 1024px;      
+    height : 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
